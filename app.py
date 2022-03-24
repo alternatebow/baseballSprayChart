@@ -74,6 +74,8 @@ def plotHits(data: pd.DataFrame, params):
   for i in range(len(data['pitch_type'])):
     row = data.iloc[i]
     if (row["events"] == "home_run"):
+      if (np.isnan(row["annontate"])):
+        continue
       plt.annotate(
         int(row[params["annontate"]]),
         (row['hc_x'], row['hc_y'] * -1 + 3)
