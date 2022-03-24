@@ -56,7 +56,7 @@ def drawStadium(teamPark: str):
   stadium = stadium.loc[:, 'team':]
   stad = stadium[stadium['name'] == teamPark]
   stad = stad.groupby('segment')
-  plt.figure(figsize=(14, 12))
+  plt.figure(figsize=(15, 15))
   for segment, coords in stad:
     plt.plot(coords['x'], coords['y'], linestyle= '-', color = 'black')
 
