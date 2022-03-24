@@ -3,3 +3,4 @@ numpy
 pandas
 pybaseball
 matplotlib
+gunicorn
