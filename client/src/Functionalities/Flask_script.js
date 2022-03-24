@@ -13,8 +13,8 @@ function Flask_script(props) {
   }
 
   const getImg = async (url, player) => {
-    console.log(props.start)
-    console.log(props.end)
+    console.log(player.start)
+    console.log(player.end)
     props.setLoad(true)
     const response = await fetch(
       url, {
