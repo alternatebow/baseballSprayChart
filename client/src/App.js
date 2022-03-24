@@ -46,7 +46,7 @@ function App() {
     
   return (
     <div>
-      <Container>
+      <Container fluid>
         <Header textAlign='center' style={{padding:'1em 0em 3em' }}><h1>MLB Slugger Spray Chart</h1></Header>
         <Grid>
           <Grid.Row>
