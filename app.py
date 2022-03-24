@@ -1,17 +1,22 @@
 import base64
 import io
-from flask import Flask, Response, jsonify, request, send_file
+from flask import Flask, Response, jsonify, request, send_file, send_from_directory
 from flask_cors import CORS, cross_origin
 import pandas as pd
 import numpy as np
 import pybaseball as pyb
 import matplotlib.pyplot as plt
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='client/build', static_url_path= '')
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 # Follow Python PEP 8 standards
+
+@app.route('/')
+@cross_origin()
+def home():
+  return send_from_directory(app.static_folder, 'index.html')
 
 @app.route('/chart', methods=["POST"])
 @cross_origin()
