@@ -32,7 +32,7 @@ const teamOptions = [
     {key: 'TB', value: 'TB', flag: <MLBIcons.TB size={20}/>, text: 'Rays'},
     {key: 'TEX', value: 'TEX', flag: <MLBIcons.TEX size={20}/>, text: 'Rangers'},
     {key: 'TOR', value: 'TOR', flag: <MLBIcons.TOR size={20}/>, text: 'Blue Jays'},
-    {key: 'WAS', value: 'WAS', flag: <MLBIcons.WAS size={20}/>, text: 'Nationals'},
+    {key: 'WSH', value: 'WSH', flag: <MLBIcons.WAS size={20}/>, text: 'Nationals'},
 ]
 
 function Team(props) {

@@ -1,5 +1,6 @@
 import base64
 import io
+# from tkinter import Y
 from flask import Flask, Response, jsonify, request, send_file, send_from_directory
 from flask_cors import CORS, cross_origin
 import pandas as pd
@@ -28,11 +29,13 @@ def customSprayChart():
     content["start"],
     content["end"]
     )
-  dframe = dframe.loc[dframe['home_team'] == content["team"]].sort_values(
+  print(content['team'])
+  print(dframe.shape)
+  dframe = dframe.loc[dframe['home_team'] == content["team"]]
+  dframe = dframe.sort_values(
     'estimated_woba_using_speedangle',
      ascending=True
      )
-
   drawStadium(content['park'])
   plotHits(dframe, content)
   
@@ -56,11 +59,12 @@ def drawStadium(teamPark: str):
   stadium = stadium.loc[:, 'team':]
   stad = stadium[stadium['name'] == teamPark]
   stad = stad.groupby('segment')
-  plt.figure(figsize=(15, 15))
+  plt.figure(figsize=(13, 13))
   for segment, coords in stad:
     plt.plot(coords['x'], coords['y'], linestyle= '-', color = 'black')
 
 def plotHits(data: pd.DataFrame, params):
+  print(data['hc_x'].shape, data['hc_y'].shape)
   plt.scatter(
     x = data['hc_x'],
     y = data['hc_y'] * -1,
