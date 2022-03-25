@@ -30,7 +30,7 @@ def customSprayChart():
     content["end"]
     )
   print(content['team'])
-  print(dframe.shape)
+  print(dframe['home_team'][0])
   dframe = dframe.loc[dframe['home_team'] == content["team"]]
   dframe = dframe.sort_values(
     'estimated_woba_using_speedangle',
