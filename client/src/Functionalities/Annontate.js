@@ -15,7 +15,7 @@ const catagories = [
 function Annontate(props) {
     return (
         <Dropdown onChange={(e, opt) => {
-            props.setAnnontate(opt.value)
+            props.setAnnotate(opt.value)
         }} selection fluid options={catagories}>{props.Annontate}</Dropdown>
     )
 }
