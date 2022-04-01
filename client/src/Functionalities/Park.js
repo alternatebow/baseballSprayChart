@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import Creatable from 'react-select/creatable';
-import * as MLBIcons from 'react-mlb-logos'
 
 const parkOptions = [
     { label: 'Angel Stadium of Anaheim', value: 'Angel Stadium of Anaheim' },

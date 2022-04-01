@@ -25,7 +25,11 @@ function Flask_script(props) {
     props.setLoad(false)
   };
 
-  return <Button onClick={() => getImg('https://baseballspraychart.herokuapp.com/chart', playerRequest)} primary loading={props.loading}>Generate Chart!</Button>
+  return <Button onClick={() => getImg(
+          'https://baseballspraychart.herokuapp.com/chart', playerRequest)} 
+          primary loading={props.loading}
+          >Generate Chart!
+        </Button>
 }
 
 export default Flask_script

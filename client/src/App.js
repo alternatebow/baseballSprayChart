@@ -7,6 +7,7 @@ import 'react-nice-dates/build/style.css'
 import Team from "./Functionalities/Team"
 import Park from "./Functionalities/Park"
 import Spray_Chart from "./Functionalities/Spray_Chart"
+import Annontate from './Functionalities/Annontate';
 
 function App() {
   const [chart, setChart] = useState()
@@ -30,20 +31,7 @@ function App() {
 
     return imageByte
   };
-
-  // useEffect(() => {
-
-  //   getImg('http://127.0.0.1:5000/chart', {
-  //     firstName: 'Randy',
-  //     lastName : 'Arozarena',
-  //     team : 'TB',
-  //     start : '2021-04-01',
-  //     end : '2021-10-03',
-  //     park : 'Tropicana Field',
-  //     annontate : 'launch_angle'
-  //   }).then(val => setChart(val));
-  // }, [])
-    
+  
   return (
     <div>
       <Container fluid>
@@ -105,6 +93,10 @@ function App() {
                     <br></br>
                     <Label>Home Team</Label> 
                     <Team setTeam={setTeam}/>
+                    <br></br>
+                    <br></br>
+                    <Label>Sabermetric to Display</Label>
+                    <Annontate setAnnotate = {setAnnotate}></Annontate>
                   </Grid.Column>
                 </Grid.Row>
               </Grid>
